@@ -16,27 +16,30 @@ class BookSeeder extends Seeder
     public function run()
     {
         Book::create([
-            'title'=> "judul baru",
-            'author'=>  "penagrang baru",
-            'price'=> 1200,
+            'title'=> "Sherlock Holmes",
+            'image'=> "image",
+            'author'=>  "Sir Arthur conan doyle",
+            'price'=> 50000,
             'release'=> "2024-08-01",
-            'category_id' => "1",
+            'category_id' => "3",
         ]);
 
         Book::create([
-            'title'=> "judul baru ke 2",
-            'author'=>  "penagrang baru",
-            'price'=> 1200,
+            'title'=> "Conan",
+            'image'=> "image",
+            'author'=>  "Aoyama Gosho",
+            'price'=> 30000,
             'release'=> "2024-08-01",
             'category_id' => "2",
         ]);
 
         Book::create([
-            'title'=> "judul baru ke 3",
-            'author'=>  "penagrang baru",
-            'price'=> 1200,
+            'title'=> "Becoming 1%",
+            'image'=> "image",
+            'author'=>  "S. Halim",
+            'price'=> 50000,
             'release'=> "2024-08-01",
-            'category_id' => "3",
+            'category_id' => "4",
         ]);
     }
 }

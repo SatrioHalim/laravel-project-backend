@@ -15,6 +15,7 @@ class Book extends Model
         'price',
         'release',
         'category_id',
+        'image',
     ];
 
     public function kategori(){

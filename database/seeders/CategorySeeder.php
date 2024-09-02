@@ -26,7 +26,7 @@ class CategorySeeder extends Seeder
             'name'=> "novel",
         ]);
         Category::create([
-            'name'=> "koran",
+            'name'=> "Self development",
         ]);
     }
 }

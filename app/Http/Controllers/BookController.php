@@ -20,12 +20,17 @@ class BookController extends Controller
     // buat function post book
     public function createBook(BookRequest $request){
 
+        $extension = $request->file('image')->getClientOriginalExtension();
+        $fileName = $request->title.'_'.$request->author.'.'.$extension; //rename image
+        $request->file('image')->storeAs('public/image/', $fileName); //save image
+
         Book::create([
             'title'=> $request->title,
             'author'=> $request->author,
             'price'=> $request->price,
             'release'=> $request->release,
             'category_id' => $request->category_id,
+            'image'=>$fileName,
         ]);
 
         return redirect(route('getBooks'));
@@ -38,6 +43,9 @@ class BookController extends Controller
 
     public function updateBook(Request $request, $id){
 
+        $extension = $request->file('image')->getClientOriginalExtension();
+        $fileName = $request->title.'_'.$request->author.'.'.$extension; //rename image
+        $request->file('image')->storeAs('public/image/', $fileName); //save image
         $book = Book::find($id);
 
         $book->update([
@@ -46,6 +54,7 @@ class BookController extends Controller
             'price'=> $request->price,
             'release'=> $request->release,
             'category_id' => $request->category_id,
+            'image'=>$fileName,
         ]);
 
         return redirect(route('getBooks'));

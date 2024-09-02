@@ -17,6 +17,16 @@
                 <form action="{{ route('createBook')}}" method="POST" enctype="multipart/form-data">
                     @CSRF
                     <div class="mb-3">
+                        <label for="image" class="form-label">image</label>
+                        <input name="image" type="file" class="form-control" id="formGroupExampleInput">
+                        @error('image')
+                        <div class="text-danger">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
                         <label for="title" class="form-label">title</label>
                         <input name="title" type="text" class="form-control" id="formGroupExampleInput" placeholder="Input title">
                         @error('title')

@@ -18,6 +18,11 @@
                     @CSRF
                     @method('patch')
                     <div class="mb-3">
+                        <label for="image" class="form-label">image</label>
+                        <input name="image" type="file" class="form-control" id="formGroupExampleInput">
+                    </div>
+
+                    <div class="mb-3">
                         <label for="title" class="form-label">title</label>
                         <input name="title" value="{{$book->title}}" type="text" class="form-control" id="formGroupExampleInput" placeholder="Input title">
                     </div>
